@@ -1,0 +1,15 @@
+.cell {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+tbody > tr:nth-child(3n+1) {
+  border-bottom: 2px solid black;
+}

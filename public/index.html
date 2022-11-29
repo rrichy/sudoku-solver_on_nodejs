@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sudoku Solver</title>
+    <meta
+      name="description"
+      content="An example for the fCC QA Sudoku Solver project"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="public/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- <h1>Sudoku Solver</h1> -->
+    </header>
+    <form id="main-form">
+      <table>
+        <tbody>
+          <tr>
+            <th>0</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+          </tr>
+          <tr>
+            <th>1</th>
+            <td>
+              <input class="cell" name="row-1-col-1" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-1-col-2" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-1-col-3" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-1-col-4" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-1-col-5" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-1-col-6" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-1-col-7" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-1-col-8" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-1-col-9" type="number" min="1" max="9" />
+            </td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td>
+              <input class="cell" name="row-2-col-1" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-2-col-2" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-2-col-3" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-2-col-4" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-2-col-5" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-2-col-6" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-2-col-7" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-2-col-8" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-2-col-9" type="number" min="1" max="9" />
+            </td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>
+              <input class="cell" name="row-3-col-1" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-3-col-2" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-3-col-3" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-3-col-4" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-3-col-5" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-3-col-6" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-3-col-7" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-3-col-8" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-3-col-9" type="number" min="1" max="9" />
+            </td>
+          </tr>
+          <tr>
+            <th>4</th>
+            <td>
+              <input class="cell" name="row-4-col-1" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-4-col-2" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-4-col-3" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-4-col-4" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-4-col-5" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-4-col-6" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-4-col-7" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-4-col-8" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-4-col-9" type="number" min="1" max="9" />
+            </td>
+          </tr>
+          <tr>
+            <th>5</th>
+            <td>
+              <input class="cell" name="row-5-col-1" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-5-col-2" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-5-col-3" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-5-col-4" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-5-col-5" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-5-col-6" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-5-col-7" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-5-col-8" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-5-col-9" type="number" min="1" max="9" />
+            </td>
+          </tr>
+          <tr>
+            <th>6</th>
+            <td>
+              <input class="cell" name="row-6-col-1" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-6-col-2" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-6-col-3" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-6-col-4" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-6-col-5" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-6-col-6" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-6-col-7" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-6-col-8" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-6-col-9" type="number" min="1" max="9" />
+            </td>
+          </tr>
+          <tr>
+            <th>7</th>
+            <td>
+              <input class="cell" name="row-7-col-1" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-7-col-2" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-7-col-3" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-7-col-4" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-7-col-5" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-7-col-6" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-7-col-7" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-7-col-8" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-7-col-9" type="number" min="1" max="9" />
+            </td>
+          </tr>
+          <tr>
+            <th>8</th>
+            <td>
+              <input class="cell" name="row-8-col-1" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-8-col-2" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-8-col-3" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-8-col-4" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-8-col-5" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-8-col-6" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-8-col-7" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-8-col-8" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-8-col-9" type="number" min="1" max="9" />
+            </td>
+          </tr>
+          <tr>
+            <th>9</th>
+            <td>
+              <input class="cell" name="row-9-col-1" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-9-col-2" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-9-col-3" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-9-col-4" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-9-col-5" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-9-col-6" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-9-col-7" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-9-col-8" type="number" min="1" max="9" />
+            </td>
+            <td>
+              <input class="cell" name="row-9-col-9" type="number" min="1" max="9" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit">solve!</button>
+    </form>
+  </body>
+  <script type="module" src="public/index.js"></script>
+</html>
